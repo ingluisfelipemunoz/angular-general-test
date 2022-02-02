@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  wsUrl: "https://desa.ies-webcontent.com.mx",
+  countries_api: "https://api.first.org/data",
 };

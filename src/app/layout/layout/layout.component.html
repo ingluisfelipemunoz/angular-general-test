@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      #menuTrigger="matMenuTrigger"
+      (mouseover)="menuTrigger.openMenu()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <span (mouseleave)="menuTrigger.closeMenu()">
+        <button routerLink="/members/dashboard" mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Dashboard</span>
+        </button>
+        <button routerLink="/members/component1" mat-menu-item>
+          <mat-icon>people_outline</mat-icon>
+          <span>Component 1</span>
+        </button>
+        <a (click)="logout()" mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Salir</span>
+        </a>
+      </span>
+    </mat-menu>
+  </span>
+  <span class="fill-remaining-space"
+    >Welcome {{ session?.usuario }} - Angular General Test -
+    ingluisfelipemunoz@gmail.com</span
+  >
+</mat-toolbar>

@@ -3,12 +3,35 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { LayoutComponent } from "./layout/layout.component";
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from "@angular/platform-browser/animations";
+import {
+  MatButtonModule,
+  MatDatepickerModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+} from "@angular/material";
+import { FormsModule } from "@angular/forms";
+import { MaterialModule } from "./common/material.module";
+import { LayoutModule } from "./layout/layout.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    LayoutModule,
+    HttpClientModule,
+  ],
   providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

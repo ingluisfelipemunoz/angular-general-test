@@ -1,0 +1,5 @@
+export enum Roles {
+  SUCURSAL = "SUCURSAL",
+  VALIDADOR = "VALIDADOR",
+  DISTRIBUIDOR = "DISTRIBUIDOR",
+}

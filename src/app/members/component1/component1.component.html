@@ -1,0 +1,25 @@
+<h2>Data Case 1</h2>
+{{ DATA1 | json }}
+<h3>Result</h3>
+{{ res1 | json }}
+<br />
+<button mat-raised-button color="primary" (click)="process(1)">
+  Process Case 1
+</button>
+<h2>Data Case 2</h2>
+{{ DATA2 | json }}
+<h3>Result</h3>
+{{ res2 | json }}
+<br />
+<button mat-raised-button color="primary" (click)="process(2)">
+  Process Case 2
+</button>
+
+<h2>Data Case 3 - Reverse</h2>
+{{ REVERSE_DATA | json }}
+<h3>Result</h3>
+{{ res_reverse | json }}
+<br />
+<button mat-raised-button color="primary" (click)="process(3)">
+  Process Case 3
+</button>

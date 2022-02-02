@@ -1,1 +1,83 @@
-<p>dashboard works!</p>
+<div class="main-content">
+  <h1>DashBoard Form</h1>
+  <div class="form-content">
+    <form class="form" [formGroup]="frm" (ngSubmit)="send(frm)">
+      <div>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Fecha Reserva</mat-label>
+          <input
+            matInput
+            formControlName="fechaReserva"
+            [min]="minDate"
+            [max]="maxDate"
+            [matDatepicker]="picker"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Correo</mat-label>
+          <input
+            matInput
+            formControlName="correo"
+            type="email"
+            placeholder="Correo"
+          />
+        </mat-form-field>
+        <div
+          *ngIf="
+            (frm.get('correo').dirty || frm.get('correo').touched) &&
+            frm.get('correo').invalid
+          "
+        >
+          Introduzca un correo valido
+        </div>
+      </div>
+      <div>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            formControlName="nombre"
+            type="text"
+            placeholder="Nombre"
+          />
+        </mat-form-field>
+        <div
+          *ngIf="
+            (frm.get('nombre').dirty || frm.get('nombre').touched) &&
+            frm.get('nombre').invalid
+          "
+        >
+          Introduzca un nombre valido
+        </div>
+      </div>
+      <div>
+        <h4>Pais</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Pais</mat-label>
+          <mat-select formControlName="pais">
+            <mat-option *ngFor="let country of countries" [value]="country">
+              {{ country }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <br />
+      <button
+        type="submit"
+        [disabled]="!frm.valid"
+        mat-raised-button
+        color="primary"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
